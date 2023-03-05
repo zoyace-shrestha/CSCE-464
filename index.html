@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="style.css" />
     <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:400,900|Source+Sans+Pro:300,900&display=swap"
         rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
 <body>
@@ -33,23 +34,52 @@
         <h1>My Work</h1>
         <p>A selection of my Work</p>
 
-        <div class="portfolio">
+        <div class="myWork-Grid">
             <a href="bhoomi.html" class="portfolio__item">
-                <img src="img/portfolio-01.jpg" alt="" class="portfolio__img" />
-            </a>
-            <a href="jatra.html" class="portfolio__item">
-                <img src="img/portfolio-02.jpg" alt="" class="portfolio__img" />
+                <img src="img/portfolio-01.jpg" alt="" class="grid__img" />
             </a>
             <a href="sumo.html" class="portfolio__item">
-                <img src="img/portfolio-03.jpg" alt="" class="portfolio__img" />
+                <img src="img/portfolio-03.jpg" alt="" class="grid__img" />
             </a>
             <a href="esatya.html" class="portfolio__item">
-                <img src="img/portfolio-04.jpg" alt="" class="portfolio__img" />
+                <img src="img/portfolio-04.jpg" alt="" class="grid__img" />
             </a>
 
         </div>
     </section>
-    <script src="/index.js"></script>
+
+    <!-- Contact me Form -->
+    <div class="form-container">
+        <div class="content-box">
+            <div class="left-section"></div>
+            <div class="right-section">
+                <h2 class="form-heading">Contact US</h2>
+                <input type="text" id="fieldName" placeholder="Your Name">
+                <input type="email" id="fieldEmail" placeholder="Your Email">
+                <input type="text" id="fieldNumber" placeholder="Your Phone Number">
+                <div>
+                    <span class="rating-heading">Rate My Website</span>
+                    <div class="rating">
+                        <input type="radio" id="star5" name="rating" value="5">
+                        <label for="star5">&#9733;</label>
+                        <input type="radio" id="star4" name="rating" value="4">
+                        <label for="star4">&#9733;</label>
+                        <input type="radio" id="star3" name="rating" value="3">
+                        <label for="star3">&#9733;</label>
+                        <input type="radio" id="star2" name="rating" value="2">
+                        <label for="star2">&#9733;</label>
+                        <input type="radio" id="star1" name="rating" value="1">
+                        <label for="star1">&#9733;</label>
+                    </div>
+                </div>
+                <textarea id="fieldFeedback" placeholder="Feed Back"></textarea>
+                <div>
+                    <button id="form-subBtn">Submit</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="/style.js"></script>
 </body>
 
 </html>

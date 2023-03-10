@@ -10,27 +10,57 @@
     <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:400,900|Source+Sans+Pro:300,900&display=swap"
         rel="stylesheet" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css"
+        integrity="sha256-46qynGAkLSFpVbEBog43gvNhfrOj+BmwXdxFgVK/Kvc=" crossorigin="anonymous" />
 </head>
 
-<body>
+<body class="light">
     <header>
-        <div class="logo">
-            <a href="https://github.com/zoyace-shrestha/CSCE-464" target="_blank">
-                <img src="img/sumologo.png" alt="Sumo World Page" />
-            </a>
-        </div>
+        <a href="https://github.com/zoyace-shrestha/CSCE-464" target="_blank">
+            <img src="img/sumologo.png" alt="Sumo World Page" width="120px" />
+        </a>
+        <nav class="navbar">
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">Projects + </a>
+                    <ul>
+                        <li><a href="#">Bhommi</a></li>
+                        <li><a href="#">SumoWorld</a></li>
+                        <li><a href="#">Esatya</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">Contact +</a>
+                    <ul>
+                        <li><a href="#">LinkedIn</a></li>
+                        <li><a href="#">Github</a></li>
+                        <li><a href="#">Email</a></li>
+                    </ul>
+                </li>
+
+            </ul>
+
+        </nav>
     </header>
 
     <!-- Introduction -->
     <section class="intro">
-        <h1 class="section-title">Hi, I am <strong>Zoyace Shrestha</strong></h1>
+        <h1 class="section-title">Hi, I am <strong>Zoyace Shrestha</strong>
+            <input type="checkbox" id="toggle">
+            <label class="toggle toggleBox" for="toggle">
+                <i class="fas fa-sun"></i>
+                <i class="fa fa-moon"></i>
+                <span class="ball"></span>
+            </label>
+        </h1>
         <p class="section-subtitle">Front End-Dev</p>
-        <img src="img/zoyace01.jpg" class="intro-image">
+        <img src="img/zoyace01.jpg" class="intro-image" width="100px">
     </section>
 
 
+
     <!-- Work -->
-    <section>
+    <section id="bodyS">
         <h1>My Work</h1>
         <p>A selection of my Work</p>
 

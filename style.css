@@ -33,8 +33,106 @@
     }
 }
 
+/* Light and Dark Mode button */
 
-html {
+.dark {
+    --clr-dark: #fff;
+    --clr-light: #303030;
+    --clr-accent: rgb(255, 120, 0);
+}
+
+.toggle {
+    cursor: pointer;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    width: 100px;
+    height: 40px;
+    border-radius: 50px;
+    transition: .2s;
+}
+
+.toggle i {
+    width: 50%;
+    line-height: 40px;
+    text-align: center;
+    font-size: var(--fs-h3);
+    z-index: 1;
+}
+
+
+.toggle .ball {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    transition: .2s ease-out;
+}
+
+/* light Mode */
+.light {
+    --clr-light: #fff;
+    --clr-dark: #303030;
+    --clr-accent: rgb(255, 120, 0);
+}
+
+.toggleBox {
+    background-color: linear-gradient(145deg, #e1e1e1, #fff);
+    box-shadow: 3px 3px 4px #e6e6e6;
+}
+
+.light .toggle .fa-sun {
+    color: var(--clr-light);
+}
+
+.light .toggle .fa-moon {
+    color: var(--clr-dark);
+}
+
+.light .toggle .ball {
+    margin: 5px;
+    margin-left: 10px;
+    background-color: var(--clr-dark);
+}
+
+/* Dark Mode */
+
+.dark {
+    --clr-dark: #fff;
+    --clr-light: #303030;
+    --clr-accent: rgb(255, 120, 0);
+}
+
+.dark .toggle {
+    background: #303030;
+    box-shadow: 3px 3px 4px #0e131b,
+        -3px -3px 3px #303030;
+}
+
+.dark .toggle .fa-sun {
+    color: #ffffff;
+}
+
+.dark .toggle .fa-moon {
+    color: #303030;
+}
+
+.dark .toggle .ball {
+    background-color: #fff;
+    margin: 5px;
+    margin-left: 0;
+    transform: translateX(60px);
+}
+
+.intro input {
+    display: none;
+}
+
+
+
+
+/* HTML */
+.html {
     scroll-behavior: smooth;
 }
 
@@ -45,15 +143,117 @@ body {
     font-family: var(--ff-primary);
     font-size: var(--fs-body);
     line-height: 1.6;
+    transition: .2s;
 }
 
-.logo {
-    max-width: 100px;
+/* Nav Bar */
+header {
+    display: flex;
+    /* position: fixed; */
+    justify-content: space-between;
+    padding: 30px 30px 0 30px;
+    background-color: var(--clr-light);
+    align-items: center;
+    z-index: 1000;
+    width: 100%;
+
 }
 
+header .navbar ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+header .navbar ul li {
+    position: relative;
+    float: left;
+}
+
+header .navbar ul li a {
+    font-size: 20px;
+    margin-top: -15px;
+    padding: 15px;
+    color: var(--clr-dark);
+    display: block;
+    text-decoration: none;
+}
+
+header .navbar ul li a:hover {
+    background-color: var(--clr-dark);
+    color: var(--clr-light);
+}
+
+header .navbar ul li ul {
+    position: absolute;
+    left: 0;
+    width: 130px;
+    display: none;
+
+}
+
+header .navbar ul li ul li {
+    width: 100%;
+
+}
+
+header .navbar ul li:hover>ul {
+    display: initial;
+}
 
 .intro {
     position: relative;
+}
+
+.section-title {
+    display: block;
+}
+
+.section-title strong {
+    display: block;
+    font-weight: var(--fw-bold);
+}
+
+.section-subtitle {
+    background: var(--clr-accent);
+    padding: 0.25em 1em;
+    color: var(--clr-light);
+    font-family: var(--ff--secondary);
+    margin-bottom: 1em;
+    display: inline-block;
+}
+
+
+/* Media Query */
+@media (min-width: 600px) {
+    .intro {
+        display: grid;
+        width: min-content;
+        margin: 0 auto;
+        grid-column-gap: 1em;
+        grid-template-areas:
+            "img title"
+            "img subtitle";
+        grid-template-columns: min-content max-content;
+    }
+
+    .intro-image {
+        grid-area: img;
+        min-width: 250px;
+        position: relative;
+        z-index: 2;
+        box-shadow: var(--bs);
+    }
+
+    .section-subtitle {
+        align-self: start;
+        grid-column: -1/1;
+        grid-row: 2;
+        text-align: right;
+        position: relative;
+        left: -1.5em;
+        width: calc(100% + 1.5em);
+    }
 }
 
 .section-subtitle {
@@ -184,4 +384,18 @@ strong {
 .rating label:hover,
 .rating input[type="radio"]:checked~label {
     color: var(--clr-accent);
+}
+
+#form-subBtn {
+    padding: 5px 12px;
+    border-radius: 5px;
+    border: none;
+    color: var(--clr-accent);
+}
+
+#form-subBtn:hover {
+    padding: 5px 12px;
+    color: var(--clr-dark);
+    background-color: var(--clr-accent);
+    border-radius: 5px;
 }

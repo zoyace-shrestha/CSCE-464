@@ -5,6 +5,18 @@ let subBtn = document.getElementById('form-subBtn');
 let feedbackInput = document.getElementById("fieldFeedback")
 const stars = document.querySelectorAll(".rating input[type='radio']");
 let ratingValue;
+const body = document.querySelector("body");
+const sunIcon = document.querySelector(".toggle .fa-sun");
+const moonIcon = document.querySelector(".toggle .fa-moon");
+const toggle = document.querySelector("#toggle");
+
+toggle.addEventListener("change", () => {
+    body.classList.toggle("dark");
+    sunIcon.className = sunIcon.className == "fas fa-sun" ? "fas fa-sun" : "fas fa-sun";
+    moonIcon.className = moonIcon.className == "fa fa-moon" ? "fa fa-moon" : "fa fa-moon";
+
+})
+
 
 subBtn.addEventListener('click', function () {
     let nameValue = nameInput.value;

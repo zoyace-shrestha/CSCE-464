@@ -399,3 +399,24 @@ strong {
     background-color: var(--clr-accent);
     border-radius: 5px;
 }
+
+.about-body {
+    background-color: #303030;
+    color: #e1e1e1;
+}
+
+
+
+#Wrk-Btn {
+    padding: 5px 12px;
+    border-radius: 5px;
+    border: none;
+    color: var(--clr-dark);
+}
+
+#Wrk-Btn:hover {
+    padding: 5px 12px;
+    color: var(--clr-dark);
+    background-color: var(--clr-accent);
+    border-radius: 5px;
+}

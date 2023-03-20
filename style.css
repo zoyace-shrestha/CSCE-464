@@ -144,6 +144,7 @@ body {
     font-size: var(--fs-body);
     line-height: 1.6;
     transition: .2s;
+    scroll-behavior: smooth;
 }
 
 /* Nav Bar */
@@ -297,7 +298,6 @@ strong {
 .grid__img:hover {
     opacity: .9;
 }
-
 
 
 .form-container {

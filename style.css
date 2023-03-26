@@ -29,7 +29,7 @@
         --fs-h1: 4.5rem;
         --fs-h2: 3.75em;
         --fs-h3: 1.5rem;
-        --fs-body: 1.125rem;
+        --fs-body: 1.2rem;
     }
 }
 
@@ -225,16 +225,36 @@ header .navbar ul li:hover>ul {
 
 
 /* What I Do Section */
-.what-I-do-section {
+.about-section {
     text-align: center;
+    margin: 0 auto;
+    width: 80%;
+    padding-top: 10px;
+    padding-bottom: 10px;
 }
 
-.what-I-do-section h2 {
+.about-section h2 {
     color: var(--clr-accent);
 }
 
 
-.what-I-do-section h2::after {
+.about-section h2::after {
+    content: "";
+    display: block;
+    width: 10%;
+    height: 1px;
+    margin: 0.4em auto 1em;
+    background: var(--clr-accent);
+    opacity: 0.25;
+}
+
+
+/* My Work Section */
+.body-section h2 {
+    color: var(--clr-accent);
+}
+
+.body-section h2::after {
     content: "";
     display: block;
     width: 10%;
@@ -284,8 +304,6 @@ header .navbar ul li:hover>ul {
     margin-bottom: 1em;
 }
 
-
-
 section {
     padding: 5em 2em;
 }
@@ -329,7 +347,7 @@ strong {
 
 .grid__img:hover {
     opacity: .9;
-    border: black 2px solid;
+    border: var(--clr) 2px solid;
 
 }
 
@@ -373,7 +391,7 @@ strong {
 }
 
 .right-section {
-    padding: 25px 50px;
+    padding: 25px 35px;
     background-color: var(--clr-light);
 }
 
@@ -446,19 +464,18 @@ strong {
     padding: 5px 12px;
     border-radius: 5px;
     border: none;
-    color: var(--clr-dark);
+    color: black;
 }
 
 #Wrk-Btn:hover {
     padding: 5px 12px;
-    color: var(--clr-dark);
     background-color: var(--clr-accent);
     border-radius: 5px;
 }
 
 #Wrk-Btn a {
     text-decoration: none;
-    color: var(--clr-dark);
+    color: black;
 }
 
 
@@ -486,4 +503,8 @@ strong {
 
 .portfolio__item:nth-child(4) {
     transition-delay: 600ms;
+}
+
+.about-image {
+    max-width: 70%;
 }

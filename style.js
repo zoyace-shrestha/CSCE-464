@@ -10,6 +10,20 @@ const sunIcon = document.querySelector(".toggle .fa-sun");
 const moonIcon = document.querySelector(".toggle .fa-moon");
 const toggle = document.querySelector("#toggle");
 
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+        console.log(entry)
+        if (entry.isIntersecting) {
+            entry.target.classList.add('show');
+        } else {
+            entry.target.classList.remove('show');
+        }
+    });
+});
+
+const hiddenElements = document.querySelectorAll('.hidden');
+hiddenElements.forEach((el) => observer.observe(el));
+
 toggle.addEventListener("change", () => {
     body.classList.toggle("dark");
     sunIcon.className = sunIcon.className == "fas fa-sun" ? "fas fa-sun" : "fas fa-sun";

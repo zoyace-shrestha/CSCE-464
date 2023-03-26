@@ -218,10 +218,30 @@ header .navbar ul li:hover>ul {
 .section-subtitle {
     background: var(--clr-accent);
     padding: 0.25em 1em;
-    color: var(--clr-light);
     font-family: var(--ff--secondary);
     margin-bottom: 1em;
     display: inline-block;
+}
+
+
+/* What I Do Section */
+.what-I-do-section {
+    text-align: center;
+}
+
+.what-I-do-section h2 {
+    color: var(--clr-accent);
+}
+
+
+.what-I-do-section h2::after {
+    content: "";
+    display: block;
+    width: 10%;
+    height: 1px;
+    margin: 0.4em auto 1em;
+    background: var(--clr-accent);
+    opacity: 0.25;
 }
 
 
@@ -284,11 +304,23 @@ strong {
     display: grid;
     grid-gap: 15px;
     grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    width: 80%;
 }
+
+.body-section {
+    margin: 0 auto;
+    text-align: center;
+}
+
 
 .myWork-Grid a img {
     width: 100%;
     height: auto;
+    align-self: center;
+    justify-self: center;
 }
 
 .grid__img {
@@ -297,9 +329,12 @@ strong {
 
 .grid__img:hover {
     opacity: .9;
+    border: black 2px solid;
+
 }
 
 
+/* Form Container */
 .form-container {
     position: relative;
     display: flex;
@@ -338,7 +373,7 @@ strong {
 }
 
 .right-section {
-    padding: 25px 40px;
+    padding: 25px 50px;
     background-color: var(--clr-light);
 }
 
@@ -423,4 +458,32 @@ strong {
 
 #Wrk-Btn a {
     text-decoration: none;
+    color: var(--clr-dark);
+}
+
+
+/* Animation for drag in */
+.hidden {
+    opacity: 0;
+    filter: blur(5px);
+    transform: translateX(-100%);
+    transition: all 1s;
+}
+
+.show {
+    opacity: 1;
+    filter: blur(0);
+    transform: translateX(0);
+}
+
+.portfolio__item:nth-child(2) {
+    transition-delay: 200ms;
+}
+
+.portfolio__item:nth-child(3) {
+    transition-delay: 400ms;
+}
+
+.portfolio__item:nth-child(4) {
+    transition-delay: 600ms;
 }

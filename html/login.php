@@ -24,7 +24,7 @@
                 <li><a href="../index.html">Home</a></li>
                 <li><a href="#">Services</a>
                     <ul>
-                        <li><a href="signup.html">Chat Zo</a></li>
+                        <li><a href="indexchat.php">Chat Zo</a></li>
                     </ul>
                 </li>
                 <li><a href="../index.html">Projects + </a>
@@ -50,24 +50,27 @@
         <section class="form login">
             <h1>Chat Along in Real Time</h1>
             <form action="#">
-                <div class="error-txt">This is an error message</div>
+                <div class="error-txt"></div>
                 <div class="field input">
                     <label>Email Address</label>
-                    <input type="text" placeholder="Email Address">
+                    <input type="text" name="email" placeholder="Email Address">
                 </div>
                 <div class="field input">
                     <label>Password</label>
-                    <input type="text" placeholder="Password">
+                    <input type="password" name="password" placeholder="Password">
                     <i class="fas fa-eye"></i>
                 </div>
                 <div class="field button">
                     <input type="submit" value="Continue to Chat">
                 </div>
             </form>
-            <div class="link">Not yet Signned Up? <a href="chat.html">Signup now</a></div>
+            <div class="link">Not yet Signned Up? <a href="indexchat.php">Signup now</a></div>
         </section>
     </div>
 
+   
+    <script src="../javascript/password-show-hide.js"></script>
+    <script src="../javascript/login.js"></script>
 </body>
 
 </html>

@@ -24,7 +24,7 @@
                 <li><a href="#">Home</a></li>
                 <li><a href="#">Services</a>
                     <ul>
-                        <li><a href="html/signup.html">Chat Zo</a></li>
+                        <li><a href="html/indexchat.php">Chat Zo</a></li>
                     </ul>
                 </li>
                 <li><a href="#">Projects + </a>

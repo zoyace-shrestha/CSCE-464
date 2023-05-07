@@ -1,3 +1,9 @@
+<?php 
+    session_start();
+    if(!isset($_SESSION['unique_id'])){
+        header("location: login.php");
+    }
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -24,7 +30,7 @@
                 <li><a href="../index.html">Home</a></li>
                 <li><a href="#">Services</a>
                     <ul>
-                        <li><a href="signup.html">Chat Zo</a></li>
+                        <li><a href="indexchat.php">Chat Zo</a></li>
                     </ul>
                 </li>
                 <li><a href="../index.html">Projects + </a>
@@ -46,42 +52,37 @@
         </nav>
     </header>
 
-    <div class="wrapper body-form">
-        <section class="form signup">
-            <h1>Chat Along in Real Time</h1>
-            <form action="#">
-                <div class="error-txt">This is an error message</div>
-                <div class="name-details">
-                    <div class="field input">
-                        <label>First Name</label>
-                        <input type="text" placeholder="First Name">
+    <div class="wrapper">
+        <section class="users">
+            <div class="header">
+                <?php 
+                    include_once "../php/config.php";
+                    $sql = mysqli_query($conn, "SELECT * FROM users WHERE unique_id = {$_SESSION['unique_id']}");
+                    if(mysqli_num_rows($sql) > 0){
+                        $row = mysqli_fetch_assoc($sql);
+                    }
+                ?>
+                <div class="content">
+                    <img src="../php/images/<?php echo $row['img'] ?>" alt="">
+                    <div class="details">
+                        <span><?php echo $row['fname'] . " " . $row['lname']?></span>
+                        <p><?php echo $row['status'] ?></p>
                     </div>
-                    <div class="field input">
-                        <label>Last Name</label>
-                        <input type="text" placeholder="Last Name">
-                    </div>
                 </div>
-                <div class="field input">
-                    <label>Email Address</label>
-                    <input type="text" placeholder="Email Address">
-                </div>
-                <div class="field input">
-                    <label>Password</label>
-                    <input type="text" placeholder="Password">
-                    <i class="fas fa-eye"></i>
-                </div>
-                <div class="field image">
-                    <label>Select Image</label>
-                    <input type="file">
-                </div>
-                <div class="field button">
-                    <input type="submit" value="Continue to Chat">
-                </div>
-            </form>
-            <div class="link">Already Signed Up? <a href="login.html">Login</a></div>
+                <a href="#" class="logout">Logout</a>
+            </div>
+            <div class="search">
+                <span class="text">Select a user to start a chat</span>
+                <input type="text" placeholder="Enter name">
+                <button><i class="fas fa-search"></i></button>
+            </div>
+            <div class="users-list">
+            
+            </div>
         </section>
     </div>
 
+    <script src="../javascript/users.js"></script>
 </body>
 
 </html>

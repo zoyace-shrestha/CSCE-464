@@ -1,3 +1,10 @@
+<?php 
+    session_start();
+    if(!isset($_SESSION['unique_id'])){
+        header("location: login.php");
+    }
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -21,7 +28,7 @@
         </a>
         <nav class="navbar">
             <ul>
-                <li><a href="../index.html">Home</a></li>
+                <li><a href="../index.php">Home</a></li>
                 <li><a href="#">Services</a>
                     <ul>
                         <li><a href="indexchat.php">Chat Zo</a></li>
@@ -49,11 +56,28 @@
     <div class="wrapper">
         <section class="chat-area">
             <div class="header">
-                <a href="#" class="back-icon"><i class="fas fa-arrow-left"></i></a>
-                <img src="../img/portfolio-02.jpg" alt="">
+               <?php 
+                    include_once "../php/config.php";
+                    // $user_id = $_POST['user_id'];
+                    // echo $user_id;
+                    // if($_SERVER['REQUEST_METHOD'] == 'GET'){
+                    //     echo "Request is get";
+                    //     print_r($_GET);
+                    // }
+                    // else{
+                    //     echo "request is not get";
+                    // }
+                    $user_id = mysqli_real_escape_string($conn, $_GET['user_id']);
+                    $sql = mysqli_query($conn, "SELECT * FROM users WHERE unique_id =  {$user_id}");
+                    if(mysqli_num_rows($sql) > 0){
+                        $row = mysqli_fetch_assoc($sql);
+                    }
+                ?>  
+                <a href="users.php" class="back-icon"><i class="fas fa-arrow-left"></i></a>
+                <img src="../php/images/<?php echo $row['img'] ?>" alt="">
                 <div class="details">
-                    <span>Coding Nepal</span>
-                    <p>Active Now</p>
+                    <span><?php echo $row['fname'] . " " . $row['lname']?></span>
+                    <p><?php echo $row['status'] ?></p>
                 </div>
             </div>
             <div class="chat-box">

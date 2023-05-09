@@ -69,7 +69,7 @@
                         <p><?php echo $row['status'] ?></p>
                     </div>
                 </div>
-                <a href="#" class="logout">Logout</a>
+                <a href="login.php" class="logout">Logout</a>
             </div>
             <div class="search">
                 <span class="text">Select a user to start a chat</span>

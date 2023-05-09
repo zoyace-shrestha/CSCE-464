@@ -875,7 +875,7 @@ strong {
     max-width: calc(100% - 130px);
 }
 
-.chat-area .typing-area {
+.typing-area {
     padding: 18px 30px;
     display: flex;
     justify-content: space-between;
@@ -891,7 +891,17 @@ strong {
     outline: none;
 }
 
-.typing-area button {
+.input-field {
+    height: 45px;
+    width: calc(100% - 50px);
+    font-size: 17px;
+    border: 1px solid #ccc;
+    padding: 0 13px;
+    border-radius: 5px;
+    outline: none;
+}
+
+.message-input-btn {
     width: 55px;
     border: none;
     outline: none;

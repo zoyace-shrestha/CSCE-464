@@ -66,7 +66,7 @@
                     <img src="../php/images/<?php echo $row['img'] ?>" alt="">
                     <div class="details">
                         <span><?php echo $row['fname'] . " " . $row['lname']?></span>
-                        <p><?php echo $row['status'] ?></p>
+                        <p>Active</p>
                     </div>
                 </div>
                 <a href="login.php" class="logout">Logout</a>
